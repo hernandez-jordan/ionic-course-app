@@ -1,0 +1,21 @@
+.slides-md {
+  margin-top: 3rem;
+}
+
+.swiper-slide{
+  text-align: left;
+}
+
+
+@media screen and (max-width: 620px) {
+  .swiper-slide{
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .swiper-slide{
+    width:60%!important;
+    margin:auto;
+  }
+}

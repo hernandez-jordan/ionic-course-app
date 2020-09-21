@@ -1,23 +1,44 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { 
+  IonPage, 
+  IonSlides, 
+  IonSlide, 
+  IonContent, 
+  IonLabel 
+} from '@ionic/react';
+
+//components
+import Welcome from '../components/Welcome';
+import SearchBar from '../components/SearchBar/SearchBar';
+import Card from '../components/Card/Card';
+
+//css
 import './Tab1.css';
+
+const subtitleMessage = `What would you like to learn today? Search below`;
+const slideOpts = {
+  initialSlide: 1,
+  speed: 400
+};
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+      <IonContent>
+        <Welcome title="Hi, Jordan" subtitle={subtitleMessage} />
+        <SearchBar />
+        <IonLabel color="medium">Studying</IonLabel><br />
+        <IonSlides pager={true} options={slideOpts}>
+          <IonSlide className="slides">
+            <Card />
+          </IonSlide>
+          <IonSlide className="slides">
+            <Card />
+          </IonSlide>
+          <IonSlide className="slides">
+            <Card />
+          </IonSlide>
+        </IonSlides>
       </IonContent>
     </IonPage>
   );
