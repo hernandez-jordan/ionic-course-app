@@ -43,6 +43,7 @@ const profileList = [
 
 ]
 
+
 const Tab3: React.FC = () => {
 
   return (
@@ -56,7 +57,7 @@ const Tab3: React.FC = () => {
         <Profile 
           sourcePath={ProfilePicture}
           alt="profile" 
-          nameProfile="Jordan Hernandez" 
+          nameProfile={'Jordan Hernandez'}
           emailProfile="jordanhernandez@apple.io"
           />
         <IonList>

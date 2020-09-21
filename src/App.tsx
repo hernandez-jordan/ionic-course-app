@@ -7,7 +7,7 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { homeSharp, albumsSharp, personSharp } from 'ionicons/icons';
@@ -73,7 +73,7 @@ const routes = [
   },
   {
     path: '/first-name',
-    component : (() => <ProfileDetails id={`/tab3`} title={`First Name`} />),
+    component : (() => <ProfileDetails id={`/tab3`} title={`First Name`}  />),
     exactPath: true
   },
 ]

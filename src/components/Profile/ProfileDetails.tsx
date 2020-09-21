@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   IonBackButton,
   IonButtons,
   IonContent,
   IonHeader,
+  IonInput,
   IonPage,
   IonTitle,
   IonToolbar
 } from '@ionic/react';
 
-interface ProfileDetails {
+
+interface ProfileDetailsProps  {
   id: string;
   title: string;
 }
 
-const ProfileDetails: React.FC<ProfileDetails> = ({ id, title }) => {
+const ProfileDetails: React.FC<ProfileDetailsProps> = ({ id, title }) => {
+  const [value, setValue] = useState<string>('');
+  const handleChange = (newValue : any) => setValue(newValue);
+  
   return (
     <IonPage>
       <IonHeader>
@@ -27,7 +32,12 @@ const ProfileDetails: React.FC<ProfileDetails> = ({ id, title }) => {
       </IonHeader>
       <IonContent>
         <br />
-        User
+        <IonInput
+          className="ion-text-center"
+          value={value}
+          placeholder="Enter First Name"
+          onIonChange={handleChange}>
+        </IonInput>
       </IonContent>
     </IonPage>
   )

@@ -76,7 +76,7 @@ const Tab2: React.FC = () => {
       <IonContent >
         <IonList>
           {course.map((course, key) =>
-            <IonItem key={key} button onClick={() => course.title}>
+            <IonItem key={key} button >
               <IonIcon slot="start" icon={course.icon}></IonIcon>
               <IonIcon slot="end" icon={chevronForward}></IonIcon>
               <IonLabel>
