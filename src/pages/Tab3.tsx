@@ -21,19 +21,24 @@ import './Tab3.css';
 
 const profileList = [
   {
-    'title': 'First Name',
+    title: 'First Name',
+    href: '/first-name'
   },
   {
-    'title': 'Last Name',
+    title: 'Last Name',
+    href: '/last-name'
   },
   {
-    'title': 'Email',
+    title: 'Email',
+    href: '/email'
   },
   {
-    'title': 'Progress',
+    title: 'Progress',
+    href: '/progress'
   },
   {
-    'title': 'Settings',
+    title: 'Settings',
+    href: '/settings'
   },
 
 ]
@@ -56,7 +61,7 @@ const Tab3: React.FC = () => {
           />
         <IonList>
           {profileList.map((profileList, key) =>
-            <IonItem key={key} button routerLink="/FirstName" href="/FirstName">
+            <IonItem key={key} button href={profileList.href}>
               <IonLabel>
                 <h3>{profileList.title}</h3>
               </IonLabel>

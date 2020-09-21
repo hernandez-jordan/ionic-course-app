@@ -25,7 +25,7 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Welcome title="Hi, Jordan" subtitle={subtitleMessage} />
+        <Welcome user="Hi, Jordan" subtitle={subtitleMessage} />
         <SearchBar />
         <IonLabel color="medium">Studying</IonLabel><br />
         <IonSlides pager={true} options={slideOpts}>
