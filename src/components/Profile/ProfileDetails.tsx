@@ -20,15 +20,15 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ id, title }) => {
   const [value, setValue] = useState<string>();
   const [valueArr, setValueArr] = useState([{}])
 
-  //take value from input, on enter, push string to array
-  const handleSubmit = (e: CustomEvent<any>) => {
-    e.preventDefault()
-    if (value === "") return
-    setValueArr([...valueArr, {text: value}]);
-    console.log(value, valueArr)
-  };
-  
 
+  //take value from input, on enter, push string to array, // send to database
+  const handleSubmit = (e: CustomEvent<any>) => {
+    e.stopPropagation();
+    setValueArr([...valueArr, {text: value}]);
+    console.log("hi")
+  };
+
+console.log(value)
   return (
     <IonPage>
       <IonHeader>
@@ -41,7 +41,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ id, title }) => {
       </IonHeader>
       <IonContent>
         <br />
-        <form onSubmit={e => handleSubmit}>
+        <form onSubmit={e =>  handleSubmit}>
           <IonInput
             inputmode="text"
             className="ion-text-center"
