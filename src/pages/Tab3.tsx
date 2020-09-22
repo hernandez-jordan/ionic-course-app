@@ -15,6 +15,7 @@ import ProfilePicture from '../components/Profile/profile.png'
 
 //Components
 import Profile from '../components/Profile/Profile';
+import ProfileDetails from '../components/Profile/ProfileDetails'
 
 //css
 import './Tab3.css';

@@ -11,21 +11,21 @@ import {
 } from '@ionic/react';
 
 
-interface ProfileDetailsProps  {
+interface ProfileDetailsProps {
   id: string;
   title: string;
 }
 
 const ProfileDetails: React.FC<ProfileDetailsProps> = ({ id, title }) => {
-  const [value, setValue] = useState<string>('');
-  const [valueArr, setValueArr] = useState<[{}]>([{}])
-  
+  const [value, setValue] = useState<string>();
+  const [valueArr, setValueArr] = useState([{}])
+
   //take value from input, on enter, push string to array
-  const handleChange = (e: CustomEvent<any>) => {
-    if(value === "" ) return 
-    setValueArr(valueArr)
-    //setValueArr([...valueArr, { id: Date.now(), text: value }]);
-    setValue((e.target as HTMLInputElement).value)
+  const handleSubmit = (e: CustomEvent<any>) => {
+    e.preventDefault()
+    if (value === "") return
+    setValueArr([...valueArr, {text: value}]);
+    console.log(value, valueArr)
   };
   
 
@@ -41,12 +41,20 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ id, title }) => {
       </IonHeader>
       <IonContent>
         <br />
-        <IonInput
-          className="ion-text-center"
-          value={value}
-          placeholder="Enter First Name"
-          onIonChange={handleChange}>
-        </IonInput>
+        <form onSubmit={e => handleSubmit}>
+          <IonInput
+            inputmode="text"
+            className="ion-text-center"
+            value={value}
+            placeholder="Enter First Name"
+            onIonChange={
+              e => setValue(e.detail.value!)
+            }
+            clearInput={true}
+          >
+          </IonInput>
+        </form>
+
       </IonContent>
     </IonPage>
   )
