@@ -18,8 +18,17 @@ interface ProfileDetailsProps  {
 
 const ProfileDetails: React.FC<ProfileDetailsProps> = ({ id, title }) => {
   const [value, setValue] = useState<string>('');
-  const handleChange = (newValue : any) => setValue(newValue);
+  const [valueArr, setValueArr] = useState<[{}]>([{}])
   
+  //take value from input, on enter, push string to array
+  const handleChange = (e: CustomEvent<any>) => {
+    if(value === "" ) return 
+    setValueArr(valueArr)
+    //setValueArr([...valueArr, { id: Date.now(), text: value }]);
+    setValue((e.target as HTMLInputElement).value)
+  };
+  
+
   return (
     <IonPage>
       <IonHeader>
