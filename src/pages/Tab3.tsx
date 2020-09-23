@@ -20,7 +20,7 @@ import Profile from '../components/Profile/Profile';
 //css
 import './Tab3.css';
 
-const profileList = [
+const profileLists = [
   {
     title: 'First Name',
     href: '/first-name'
@@ -62,7 +62,7 @@ const Tab3: React.FC = () => {
           emailProfile="jordanhernandez@apple.io"
           />
         <IonList>
-          {profileList.map((profileList, key) =>
+          {profileLists.map((profileList, key) =>
             <IonItem key={key} button href={profileList.href}>
               <IonLabel>
                 <h3>{profileList.title}</h3>
